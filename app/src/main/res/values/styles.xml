@@ -1,8 +1,7 @@
 <resources>
 
-    <!-- Base application theme. -->
+    <!-- Base/Day mode application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">#2196F3</item>
         <item name="colorPrimaryDark">#1976D2</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -15,9 +14,8 @@
     </style>
 
 
-    <!-- Night / dark  Mode theme. -->
+    <!-- Night Theme. -->
     <style name="darktheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">#212121</item>
         <item name="colorPrimaryDark">#000000</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -33,7 +31,6 @@
     <style name="WindowAnimationTransition">
         <item name="android:windowEnterAnimation" >@android:anim/fade_in</item>
         <item name="android:windowExitAnimation">@android:anim/fade_out</item>
-
     </style>
 
 </resources>

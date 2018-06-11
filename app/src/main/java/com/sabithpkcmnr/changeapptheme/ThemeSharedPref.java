@@ -1,4 +1,4 @@
-package app.healthunbox.com.shared;
+package com.sabithpkcmnr.changeapptheme;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -6,18 +6,18 @@ import android.content.SharedPreferences;
 public class ThemeSharedPref {
 
     SharedPreferences mySharedPref ;
-    public ThemeSharedPref(Context context) {
+    ThemeSharedPref(Context context) {
         mySharedPref = context.getSharedPreferences("filename",Context.MODE_PRIVATE);
     }
 
-    // this method will save the nightMode State : True or False
+    //To save the night mode state as true or false.
     public void setNightModeState(Boolean state) {
         SharedPreferences.Editor editor = mySharedPref.edit();
         editor.putBoolean("NightMode",state);
-        editor.commit();
+        editor.apply();
     }
 
-    // this method will load the Night Mode State
+    //To load the night or day mode.
     public Boolean loadNightModeState (){
         Boolean state = mySharedPref.getBoolean("NightMode",false);
         return  state;

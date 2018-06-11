@@ -1,9 +1,8 @@
-package app.healthunbox.com.shared;
+package com.sabithpkcmnr.changeapptheme;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatDelegate;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
@@ -33,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         //Displaying the layout after setting the theme
         setContentView(R.layout.activity_main);
 
-        myswitch= findViewById(R.id.switch1);
+        myswitch= findViewById(R.id.mySwitch);
         if (sharedpref.loadNightModeState()==true) {
             myswitch.setChecked(true);
         }
@@ -56,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
 
     //Method to restart the app
     public void restartApp () {
-        Intent i = new Intent(getApplicationContext(),MainActivity.class);
-        startActivity(i);
+        Intent restartApp = new Intent(getApplicationContext(),MainActivity.class);
+        startActivity(restartApp);
         finish();
     }
 }

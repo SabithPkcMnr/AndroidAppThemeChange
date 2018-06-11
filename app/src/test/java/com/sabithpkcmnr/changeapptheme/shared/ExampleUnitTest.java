@@ -1,4 +1,4 @@
-package app.healthunbox.com.shared;
+package com.sabithpkcmnr.changeapptheme.shared;
 
 import org.junit.Test;
 

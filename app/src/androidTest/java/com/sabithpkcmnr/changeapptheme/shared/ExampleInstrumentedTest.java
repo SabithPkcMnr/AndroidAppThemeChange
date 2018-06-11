@@ -1,4 +1,4 @@
-package app.healthunbox.com.shared;
+package com.sabithpkcmnr.changeapptheme.shared;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
