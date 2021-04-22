@@ -1,10 +1,12 @@
 package com.sabithpkcmnr.changeapptheme;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.CompoundButton;
-import android.widget.Switch;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.switchmaterial.SwitchMaterial;
 
 /*
 * Code by Sabith Pkc Mnr
@@ -12,10 +14,10 @@ import android.widget.Switch;
 * Visit: https://www.SabithPkcMnr.com
 */
 
-public class MainActivity extends AppCompatActivity {
+public class ActivityHome extends AppCompatActivity {
 
     //Variables
-    private Switch myswitch;
+    SwitchMaterial mySwitch;
     ThemeSharedPref sharedpref;
 
     @Override
@@ -23,22 +25,20 @@ public class MainActivity extends AppCompatActivity {
 
         //Checking that state true or false from SharedPref
         sharedpref = new ThemeSharedPref(this);
-        if(sharedpref.loadNightModeState()==true) {
-            setTheme(R.style.darktheme);
-        }
-        else  setTheme(R.style.AppTheme);
+
+        setTheme(sharedpref.isNightMode()? R.style.ThemeNight : R.style.ThemeDay);
         super.onCreate(savedInstanceState);
 
         //Displaying the layout after setting the theme
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
 
-        myswitch= findViewById(R.id.mySwitch);
-        if (sharedpref.loadNightModeState()==true) {
-            myswitch.setChecked(true);
+        mySwitch= findViewById(R.id.mySwitch);
+        if (sharedpref.isNightMode()) {
+            mySwitch.setChecked(true);
         }
 
         //Checking the toggle state and saving it to the SharedPref
-        myswitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        mySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
     //Method to restart the app
     public void restartApp () {
-        Intent restartApp = new Intent(getApplicationContext(),MainActivity.class);
+        Intent restartApp = new Intent(getApplicationContext(), ActivityHome.class);
         startActivity(restartApp);
         finish();
     }

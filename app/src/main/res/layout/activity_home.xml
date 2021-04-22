@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="?attr/backgroundcolor"
     android:orientation="vertical"
-    tools:context="com.sabithpkcmnr.changeapptheme.MainActivity">
+    tools:context=".ActivityHome">
 
     <LinearLayout
         android:layout_gravity="center"
@@ -24,7 +24,7 @@
             android:layout_margin="10dp"
             android:textColor="?attr/textcolor" />
 
-        <Switch
+        <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/mySwitch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

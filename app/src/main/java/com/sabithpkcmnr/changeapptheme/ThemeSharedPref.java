@@ -18,8 +18,7 @@ public class ThemeSharedPref {
     }
 
     //To load the night or day mode.
-    public Boolean loadNightModeState (){
-        Boolean state = mySharedPref.getBoolean("NightMode",false);
-        return  state;
+    public Boolean isNightMode (){
+        return  mySharedPref.getBoolean("NightMode",false);
     }
 }
