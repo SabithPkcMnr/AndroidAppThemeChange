@@ -1,6 +1,5 @@
 package com.sabithpkcmnr.changeapptheme;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.CompoundButton;
 
@@ -9,31 +8,31 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 /*
-* Code by Sabith Pkc Mnr
-* Visit: https://www.youtube.com/SabithPkcMnr
-* Visit: https://www.SabithPkcMnr.com
-*/
+ * Code by Sabith Pkc Mnr
+ * Visit: https://www.youtube.com/SabithPkcMnr
+ * Visit: https://www.SabithPkcMnr.com
+ */
 
 public class ActivityHome extends AppCompatActivity {
 
     //Variables
     SwitchMaterial mySwitch;
-    ThemeSharedPref sharedpref;
+    ThemeSharedPref sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         //Checking that state true or false from SharedPref
-        sharedpref = new ThemeSharedPref(this);
+        sharedPref = new ThemeSharedPref(this);
 
-        setTheme(sharedpref.isNightMode()? R.style.ThemeNight : R.style.ThemeDay);
+        setTheme(sharedPref.isNightMode() ? R.style.ThemeNight : R.style.ThemeDay);
         super.onCreate(savedInstanceState);
 
         //Displaying the layout after setting the theme
         setContentView(R.layout.activity_home);
 
-        mySwitch= findViewById(R.id.mySwitch);
-        if (sharedpref.isNightMode()) {
+        mySwitch = findViewById(R.id.mySwitch);
+        if (sharedPref.isNightMode()) {
             mySwitch.setChecked(true);
         }
 
@@ -41,22 +40,15 @@ public class ActivityHome extends AppCompatActivity {
         mySwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    sharedpref.setNightModeState(true);
-                    restartApp();
-                }
-                else {
-                    sharedpref.setNightModeState(false);
-                    restartApp();
-                }
+                sharedPref.setNightModeState(isChecked);
+                //Reopen page with fade animation
+                finish();
+                overridePendingTransition(R.anim.anim_fade_in, R.anim.anim_fade_out);
+                startActivity(getIntent());
+
+                //recreate();
             }
         });
     }
 
-    //Method to restart the app
-    public void restartApp () {
-        Intent restartApp = new Intent(getApplicationContext(), ActivityHome.class);
-        startActivity(restartApp);
-        finish();
-    }
 }

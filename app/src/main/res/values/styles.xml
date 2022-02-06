@@ -16,7 +16,7 @@
     <!-- Night Theme. -->
     <style name="ThemeNight" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <item name="colorPrimary">#212121</item>
-        <item name="colorPrimaryDark">#000000</item>
+        <item name="colorPrimaryDark">#191919</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="backgroundcolor">#303030</item>
         <item name="cardbackground">#424242</item>
@@ -27,8 +27,8 @@
     </style>
 
     <style name="WindowAnimationTransition">
-        <item name="android:windowEnterAnimation" >@android:anim/fade_in</item>
-        <item name="android:windowExitAnimation">@android:anim/fade_out</item>
+        <item name="android:windowEnterAnimation">@anim/anim_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_fade_out</item>
     </style>
 
 </resources>
