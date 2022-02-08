@@ -7,7 +7,7 @@ public class ThemeSharedPref {
 
     SharedPreferences mySharedPref ;
     ThemeSharedPref(Context context) {
-        mySharedPref = context.getSharedPreferences("filename",Context.MODE_PRIVATE);
+        mySharedPref = context.getSharedPreferences("AppData",Context.MODE_PRIVATE);
     }
 
     //To save the night mode state as true or false.

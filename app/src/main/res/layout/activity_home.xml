@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/backgroundcolor"
+    android:background="?attr/colorBackground"
     android:orientation="vertical"
     tools:context=".ActivityHome">
 
@@ -22,7 +22,7 @@
             android:gravity="center"
             android:textSize="25sp"
             android:layout_margin="10dp"
-            android:textColor="?attr/textcolor" />
+            android:textColor="?attr/colorTextPrimary" />
 
         <com.google.android.material.switchmaterial.SwitchMaterial
             android:id="@+id/mySwitch"

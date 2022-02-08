@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="ds" >
-        <attr name="backgroundcolor" format="color" />
-        <attr name="cardbackground" format="color" />
-        <attr name="textcolor" format="color" />
-        <attr name="tintcolor" format="color" />
-        <attr name="buttoncolor" format="color" />
+    <declare-styleable name="theme" >
+        <attr name="colorBackground" format="color" />
+        <attr name="colorCard" format="color" />
+        <attr name="colorTextPrimary" format="color" />
+        <attr name="colorTint" format="color" />
+        <attr name="colorButton" format="color" />
     </declare-styleable>
 </resources>
